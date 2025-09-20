@@ -1,9 +1,5 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+ 
 
 @theme inline {
   --color-background: var(--background);
@@ -18,9 +14,75 @@
     --foreground: #ededed;
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+ 
+#storybook-root {
+  height: 100%;
+   display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 30px;
+  
 }
+
+@theme {
+  /* 🔹 Neutral (Gray) */
+--color-neutral:        oklch(0.97 0 321); /* базовый серый */
+--color-neutral-dark:       oklch(0.7418 0 0); /* базовый серый */
+--color-neutral-light:      oklch(1 0 0); /* базовый серый */
+--color-neutral-hover:  oklch(0.87 0.01 270); /* чуть темнее при наведении */
+--color-neutral-active: oklch(0.80 0.02 270); /* ещё темнее при нажатии */
+
+  /* 🔹 Dark */
+  --color-dark: oklch(0.3 0.05 270);
+  --color-dark-hover: oklch(0.25 0.05 270);
+  --color-dark-active: oklch(0.2 0.05 270);
+
+  /* 🔹 Primary */
+  --color-primary: oklch(0.65 0.14 290);
+  --color-primary-hover: oklch(0.6 0.14 490);
+  --color-primary-active: oklch(0.55 0.14 290);
+
+  /* 🔹 Secondary */
+  --color-secondary: oklch(0.65 0.14 310);
+  --color-secondary-hover: oklch(0.6 0.14 310);
+  --color-secondary-active: oklch(0.55 0.14 310);
+
+  /* 🔹 Accent */
+  --color-accent: oklch(0.7 0.16 320);
+  --color-accent-hover: oklch(0.65 0.16 320);
+  --color-accent-active: oklch(0.58 0.16 320);
+
+  /* ✅ Success */
+  --color-success: oklch(0.7 0.15 150);
+  --color-success-hover: oklch(0.65 0.15 150);
+  --color-success-active: oklch(0.58 0.15 150);
+
+  /* ⚠️ Warning */
+  --color-warning: oklch(0.85 0.18 90);
+  --color-warning-hover: oklch(0.8 0.18 90);
+  --color-warning-active: oklch(0.72 0.18 90);
+
+  /* ❌ Error */
+  --color-error: oklch(0.65 0.2 30);
+  --color-error-hover: oklch(0.6 0.2 30);
+  --color-error-active: oklch(0.52 0.2 30);
+
+  --radius-main: 10px;
+
+
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+
+}
+
+ 
+@utility shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
