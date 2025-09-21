@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    src: cardImg,
+    src: cardImg.src,
     name: 'Командная башня',
     type: 'Земля',
     description: 'Добавьте одну ману любого цвета в цветовую принадлежность вашего командира.',
