@@ -10,7 +10,7 @@ interface Props {
   bgColor?: string;
   borderColor?: string;
   handleButton: () => void;
-  isBold: boolean;
+  isBold?: boolean;
 }
 
 export const ButtonText = ({

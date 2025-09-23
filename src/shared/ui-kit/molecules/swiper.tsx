@@ -1,3 +1,5 @@
+"use client";
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Mousewheel, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
@@ -7,13 +9,14 @@ import { EffectCards } from 'swiper/modules';
 
 interface Props {
   elementsList: React.ReactNode[];
-  slidesPerView: number;
+  slidesPerView?: number;
 }
 
-export const SwiperImg = ({ elementsList, slidesPerView }: Props) => {
+export const SwiperCard = ({ elementsList, slidesPerView=4 }: Props) => {
   return (
     <>
       <Swiper
+        key={slidesPerView}   
         effect={slidesPerView === 1 ? 'cards' : ''}
         modules={[Navigation, Mousewheel, Scrollbar, EffectCards]}
         grabCursor={true}

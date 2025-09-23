@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
- import { SwiperImg } from '../../molecules/swiper';
-import { Image } from '../../molecules/image';
+ import { SwiperCard } from '../../molecules/swiper';
+import { ImageUI } from '../../molecules/image';
 import cardImg from '../mock/assets/card.jpg';
 
-const img = <Image src={cardImg.src} alt="" size="md" />;
+const img = <ImageUI src={cardImg.src} alt="" size="md" />;
 
 const elementsList = [img, img, img, img, img, img];
 const meta = {
   title: 'Molecules/Swiper',
-  component: SwiperImg,
+  component: SwiperCard,
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof SwiperImg>;
+} satisfies Meta<typeof SwiperCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -22,7 +22,7 @@ export const Default: Story = {
     elementsList: elementsList,
     slidesPerView: 4,
   },
-  render: (args) => <SwiperImg {...args} />,
+  render: (args) => <SwiperCard {...args} />,
 };
 
 export const OneSlide: Story = {
@@ -30,5 +30,5 @@ export const OneSlide: Story = {
     elementsList: elementsList,
     slidesPerView: 1,
   },
-  render: (args) => <SwiperImg {...args} />,
+  render: (args) => <SwiperCard {...args} />,
 };

@@ -1,13 +1,13 @@
 "use client";
 import { Search } from '@mui/icons-material';
 import { Input } from '../molecules/input';
-import {  type ReactNode } from 'react';
+import {  useEffect, useRef, useState, type ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
  import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules';
-
+ 
 interface Props {
     searchResults:ReactNode[];
     OnChangeSearch:(value:string)=> void;
@@ -15,15 +15,27 @@ interface Props {
 }
 
 export const SearchInput = ({searchResults, OnChangeSearch,value}:Props)=>{
+ const [isCollapse, setIsCollapse] =useState(false)
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+         setIsCollapse(true);
+      }};
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   
   
     return ( 
-        <div className='relative'>
-        <Input value = {value}   placeholder="Поиск карты"     onChange={(e) => OnChangeSearch(e.target.value)} 
- isBorder={true}
+        <div ref={wrapperRef} className='relative search'>
+        <Input value = {value}   placeholder="Поиск карты"     onChange={(e) => {OnChangeSearch(e.target.value)
+          setIsCollapse(false)
+        }}  
          Icon={Search} />
- 
- <Swiper
+ {!isCollapse &&
+   <Swiper
   direction="vertical"
   slidesPerView="auto"
   freeMode={true}
@@ -37,7 +49,8 @@ export const SearchInput = ({searchResults, OnChangeSearch,value}:Props)=>{
       {result}
     </SwiperSlide>
   ))}
-</Swiper>
+</Swiper> }
+
 
 
          </div>

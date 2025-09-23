@@ -1,6 +1,9 @@
-import { Image } from '../molecules/image';
+import { ImageUI } from '../molecules/image';
 import { Text } from '../atoms/text';
+import { SizeImage } from '../molecules/image';
+
 interface Props {
+  sizeImage? :SizeImage
   src?: string;
   name?: string;
   type?: string;
@@ -9,10 +12,10 @@ interface Props {
   quoteAuthor?: string;
 }
 
-export const CardInfo = ({ src, name, type, description, quote, quoteAuthor }: Props) => {
+export const CardInfo = ({ src, name, type, description, quote, quoteAuthor , sizeImage="lg"}: Props) => {
   return (
-    <div className="flex  gap-10 flex-wrap md:flex-nowrap ">
-      <Image src={src || ''} size="sm" alt={name || ''} />
+    <div className="flex  gap-10  md:flex-nowrap ">
+      <ImageUI src={src || ''} size={sizeImage} alt={name || ''} />
       <div className="  flex flex-col gap-5  min-w-60   ">
         <div className="flex flex-col gap-2">
           {name && <Text text={name} bold={true} />}

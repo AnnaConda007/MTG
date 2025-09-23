@@ -4,10 +4,12 @@ interface Props {
   text: string;
   bold?: boolean;
   color?: string;
+  fontSize?:string
 }
-export const Text = ({ text, bold, color }: Props) => {
+
+export const Text = ({ text, bold, color, fontSize }: Props) => {
   return (
-    <span className={clsx(`break-words tracking-tight ${color} `, bold && 'font-bold')}>
+    <span className={clsx(`break-words tracking-tight  ${fontSize} ${color} `, bold && 'font-bold')}>
       {text}
     </span>
   );

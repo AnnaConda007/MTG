@@ -1,10 +1,10 @@
-import { HeaderWidget } from "@/widgets/header"
-import { SearchWidget } from "@/widgets/search"
+ import { SearchWidget } from "@/widgets/search-widget"
+ import { CardSwiperWidget } from "@/widgets/card-swiper-widget"
 export const HomePage = ()=>{
     return (
 <>
-<HeaderWidget/>   
 <SearchWidget />
+<CardSwiperWidget />
 </>
 
 

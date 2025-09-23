@@ -11,42 +11,29 @@ body,
   padding: 0;
 }
  
-#storybook-root {
-  height: 100%;
-   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  margin: 30px;
-}
+ 
 
 @theme {
-  /* 🔹 Neutral (Gray) */
---color-neutral:        oklch(0.97 0 321); /* базовый серый */
---color-neutral-dark:       oklch(0.7418 0 0); /* базовый серый */
---color-neutral-light:      oklch(1 0 0); /* базовый серый */
---color-neutral-hover:  oklch(0.87 0.01 270); /* чуть темнее при наведении */
---color-neutral-active: oklch(0.80 0.02 270); /* ещё темнее при нажатии */
+--color-neutral:        oklch(0.96 0.01 270);
+--color-neutral-hover:  oklch(0.90 0.01 270);
+--color-neutral-active: oklch(0.84 0.01 270);
+--color-neutral-dark:   oklch(0.32 0.02 270);
+--color-neutral-light:  oklch(1    0    0);
 
-  /* 🔹 Dark */
-  --color-dark: oklch(0.3 0.05 270);
-  --color-dark-hover: oklch(0.25 0.05 270);
-  --color-dark-active: oklch(0.2 0.05 270);
+/* Primary (индиго) */
+--color-primary:        oklch(0.62 0.10 270);
+--color-primary-hover:  oklch(0.58 0.10 270);
+--color-primary-active: oklch(0.54 0.10 270);
 
-  /* 🔹 Primary */
-  --color-primary: oklch(0.65 0.14 290);
-  --color-primary-hover: oklch(0.6 0.14 490);
-  --color-primary-active: oklch(0.55 0.14 290);
+/* Secondary (спокойный сине-серый) */
+--color-secondary:        oklch(0.64 0.09 210);
+--color-secondary-hover:  oklch(0.60 0.09 210);
+--color-secondary-active: oklch(0.56 0.09 210);
 
-  /* 🔹 Secondary */
-  --color-secondary: oklch(0.65 0.14 310);
-  --color-secondary-hover: oklch(0.6 0.14 310);
-  --color-secondary-active: oklch(0.55 0.14 310);
-
-  /* 🔹 Accent */
-  --color-accent: oklch(0.7 0.16 320);
-  --color-accent-hover: oklch(0.65 0.16 320);
-  --color-accent-active: oklch(0.58 0.16 320);
+/* Accent (приглушённая слива) */
+--color-accent:        oklch(0.66 0.09 330);
+--color-accent-hover:  oklch(0.62 0.09 330);
+--color-accent-active: oklch(0.58 0.09 330);
 
   /* ✅ Success */
   --color-success: oklch(0.7 0.15 150);

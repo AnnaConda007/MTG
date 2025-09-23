@@ -22,14 +22,14 @@ const border = isBorder ? "border-primary" : "border-transparent"
     }
   };
     return (
-     <div className={`rounded-md flex border-1 p-1 ${border} focus-within:border-primary-hover w-full` }> 
+     <div className={`rounded-md flex border-1 p-1 ${border} focus-within:border-primary-hover w-full text-2xl` }> 
           <input
         placeholder={placeholder || undefined}
         value={value}
         onChange={onChange}
         type={type}
         onKeyDown={onEnter}
-        className={` outline-none w-full  `}
+        className={` outline-none w-full  py-1`}
       />
                { Icon &&  
        <ButtonIconUi Icon={Icon}      

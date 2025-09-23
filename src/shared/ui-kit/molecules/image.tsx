@@ -1,7 +1,10 @@
+"use client";
+import Image from 'next/image';
 import { useState } from 'react';
 import { ButtonIconUi } from '../atoms/button-icon';
 import { Skeleton } from '../atoms/skeleton';
-type Size = 'sm' | 'md' | 'lg';
+
+export type SizeImage = 'sm' | 'md' | 'lg';
 type Loading = 'lazy' | 'eager';
 type InnerIcons = {
   Icon: React.ElementType;
@@ -14,17 +17,20 @@ interface Props {
   src: string;
   alt: string;
   loading?: Loading;
-  size: Size;
+  size: SizeImage;
   innerIcons?: [InnerIcons];
+  
+
+  
 }
 
-const sizeMap: Record<Size, string> = {
+const sizeMap: Record<SizeImage, string> = {
   sm: 'w-22 h-31',
   md: 'w-36 h-50',
-  lg: 'min-w-48 min-h-68',
+  lg: 'w-48 h-68',
 };
 
-export const Image = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) => {
+export const ImageUI = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) => {
   const [error, setError] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -35,8 +41,8 @@ export const Image = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) =
 
       <div className="h-fit w-full absolute flex justify-end gap-2 p-1">
         {innerIcons &&
-          innerIcons.map((icon) => (
-            <ButtonIconUi
+          innerIcons.map((icon, i) => (
+            <ButtonIconUi key={i}
               Icon={icon.Icon}
               handleButton={icon.handleIcon}
               iconColor={icon.iconColor}
@@ -45,7 +51,8 @@ export const Image = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) =
             />
           ))}
       </div>
-      <img
+      <Image
+       width={144} height={200}
         decoding="async"
         src={src}
         loading={loading}
