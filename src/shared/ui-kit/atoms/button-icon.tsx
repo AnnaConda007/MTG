@@ -9,7 +9,7 @@ interface Props {
   alt?: string;
 }
 
-export const ButtonIconUi = ({
+export const ButtonIcon = ({
   Icon,
   handleButton,
   iconColor,

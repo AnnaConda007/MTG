@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
  import { Text } from "../atoms/text";
-import { ButtonIconUi } from "../atoms/button-icon";
+import { ButtonIcon } from "../atoms/button-icon";
 import CloseIcon from '@mui/icons-material/Close';
 
 export type RouteNav = {
@@ -41,12 +41,12 @@ const toggleClosed = ()=>{ setIsClose((prev)=>!prev) }
 
  return (
     <>
-       <ButtonIconUi Icon={MenuIcon} handleButton={toggleClosed} />
+       <ButtonIcon Icon={MenuIcon} handleButton={toggleClosed} />
       <nav ref={wrapperRef} className={`flex flex-col   gap-10 bg-neutral h-screen w-full md:w-72 pt-5 absolute z-10  top-0 transition-all duration-500 ${isClose ? ` -left-[100%] md:-left-72 ` : 'left-0 '}`}>
 <div className="mx-3 flex justify-between">
       
  {logoItem}      
-    <ButtonIconUi Icon={CloseIcon}  handleButton={toggleClosed} />
+    <ButtonIcon Icon={CloseIcon}  handleButton={toggleClosed} />
 
  </div>
      <ul className=" flex flex-col gap-1 hover:bg-neutral-dark/10 p-2">

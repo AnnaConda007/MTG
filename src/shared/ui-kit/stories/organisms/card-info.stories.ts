@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CardInfo } from '../../organisms/card-info';
-import cardImg from '../mock/assets/card.jpg';
+import cardPicture from '../mock/assets/card.jpg';
 
 const meta = {
   title: 'Organisms/Card',
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    src: cardImg.src,
+    src: cardPicture.src,
     name: 'Командная башня',
     type: 'Земля',
     description: 'Добавьте одну ману любого цвета в цветовую принадлежность вашего командира.',

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
  import { SwiperCard } from '../../molecules/swiper';
-import { ImageUI } from '../../molecules/image';
-import cardImg from '../mock/assets/card.jpg';
+import { Picture } from '../../molecules/picture';
+import cardPicture from '../mock/assets/card.jpg';
 
-const img = <ImageUI src={cardImg.src} alt="" size="md" />;
+const img = <Picture src={cardPicture.src} alt="" size="md" />;
 
 const elementsList = [img, img, img, img, img, img];
 const meta = {

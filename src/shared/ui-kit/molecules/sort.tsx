@@ -1,7 +1,7 @@
 "use client";
 
 import { ButtonText } from "../atoms/button-text"
-import { ButtonIconUi } from "../atoms/button-icon"
+import { ButtonIcon } from "../atoms/button-icon"
 import SortIcon from '@mui/icons-material/Sort';
  import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
@@ -44,9 +44,9 @@ setCollapsed(true)
   
   
     return (
-        <div ref={wrapperRef} className=" bg-accent relative  "  >
-                <div className=" absolute top-0 z-30    ">
-                      <ButtonIconUi Icon={SortIcon} handleButton={toggleCollapsed} iconColor={active ? "text-primary-active" :" "}/>
+        <div ref={wrapperRef} className="relative z-10 "   >
+                <div className=" relative z-30 w-fit ">
+                      <ButtonIcon Icon={SortIcon} handleButton={toggleCollapsed} iconColor={active ? "text-primary-active" :" "}/>
 </div> 
 
             

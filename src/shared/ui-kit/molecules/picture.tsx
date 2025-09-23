@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import { useState } from 'react';
-import { ButtonIconUi } from '../atoms/button-icon';
+import { ButtonIcon } from '../atoms/button-icon';
 import { Skeleton } from '../atoms/skeleton';
 
 export type SizeImage = 'sm' | 'md' | 'lg';
@@ -30,7 +30,7 @@ const sizeMap: Record<SizeImage, string> = {
   lg: 'w-48 h-68',
 };
 
-export const ImageUI = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) => {
+export const Picture = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) => {
   const [error, setError] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -42,7 +42,7 @@ export const ImageUI = ({ src, alt, loading = 'lazy', size, innerIcons }: Props)
       <div className="h-fit w-full absolute flex justify-end gap-2 p-1">
         {innerIcons &&
           innerIcons.map((icon, i) => (
-            <ButtonIconUi key={i}
+            <ButtonIcon key={i}
               Icon={icon.Icon}
               handleButton={icon.handleIcon}
               iconColor={icon.iconColor}

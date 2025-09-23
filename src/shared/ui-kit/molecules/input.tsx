@@ -1,4 +1,4 @@
-import { ButtonIconUi } from "../atoms/button-icon";
+import { ButtonIcon } from "../atoms/button-icon";
 
 interface Props {
 value: string;
@@ -32,7 +32,7 @@ const border = isBorder ? "border-primary" : "border-transparent"
         className={` outline-none w-full  py-1`}
       />
                { Icon &&  
-       <ButtonIconUi Icon={Icon}      
+       <ButtonIcon Icon={Icon}      
            handleButton={() => { 
              if(onHandleInput)   onHandleInput()
             }} />

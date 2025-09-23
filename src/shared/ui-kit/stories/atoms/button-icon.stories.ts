@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import { ButtonIconUi } from '../../atoms/button-icon';
+import { ButtonIcon } from '../../atoms/button-icon';
 
 const meta = {
   title: 'Atoms/Button-icon',
-  component: ButtonIconUi,
+  component: ButtonIcon,
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof ButtonIconUi>;
+} satisfies Meta<typeof ButtonIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

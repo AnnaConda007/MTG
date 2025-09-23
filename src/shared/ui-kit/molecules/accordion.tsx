@@ -2,7 +2,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { useState, useRef, useEffect, type ReactNode } from 'react';
 import clsx from 'clsx';
-import { ButtonIconUi } from '../atoms/button-icon';
+import { ButtonIcon } from '../atoms/button-icon';
 import { Text } from '../atoms/text';
 
 interface Props {
@@ -43,7 +43,7 @@ export const Accordion = ({ title, mainContent }: Props) => {
           <div className="break-words">{mainContent}</div>
         </div>
       </div>
-      <ButtonIconUi Icon={Icon} handleButton={toggleAccordion} iconColor="text-primary" />
+      <ButtonIcon Icon={Icon} handleButton={toggleAccordion} iconColor="text-primary" />
     </div>
   );
 };
