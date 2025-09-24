@@ -41,7 +41,7 @@ const toggleClosed = ()=>{ setIsClose((prev)=>!prev) }
  return (
     <>
        <ButtonIcon Icon={MenuIcon} handleButton={toggleClosed} />
-      <nav ref={wrapperRef} className={`flex flex-col   gap-10 bg-neutral h-screen w-full md:w-72 pt-5 absolute z-10  top-0 transition-all duration-500 ${isClose ? ` -left-[100%] md:-left-72 ` : 'left-0 '}`}>
+      <nav ref={wrapperRef} className={`flex flex-col   gap-10 bg-neutral h-screen w-full md:w-72 pt-5 absolute z-20  top-0 transition-all duration-500 ${isClose ? ` -left-[100%] md:-left-72 ` : 'left-0 '}`}>
 <div className="mx-3 flex justify-between">
       
  {logoItem}      
