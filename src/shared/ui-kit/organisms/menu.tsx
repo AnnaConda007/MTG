@@ -23,8 +23,7 @@ export const Menu = ({ logoItem, items   }: Props) =>{
  const [isClose, setIsClose] = useState(true)
      const wrapperRef = useRef<HTMLDivElement>(null);
  
-const match =  (location:string, path:string) => {
-  location.startsWith(path)} 
+const match =  (location:string, path:string) => location.startsWith(path)
 
 const toggleClosed = ()=>{ setIsClose((prev)=>!prev) }
 
