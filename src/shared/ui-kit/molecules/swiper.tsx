@@ -10,9 +10,11 @@ import { EffectCards } from 'swiper/modules';
 interface Props {
   elementsList: React.ReactNode[];
   slidesPerView?: number;
+    onReachEnd?: () => void; 
+
 }
 
-export const SwiperCard = ({ elementsList, slidesPerView=4 }: Props) => {
+export const SwiperCard = ({ elementsList, onReachEnd,slidesPerView=4 }: Props) => {
   return (
     <>
       <Swiper
@@ -26,7 +28,13 @@ export const SwiperCard = ({ elementsList, slidesPerView=4 }: Props) => {
           hide: true,
         }}
         mousewheel
-        className="[&_.swiper-scrollbar]:-mb-1.5 
+  onSlideChange={(swiper) => {
+     if (swiper.isEnd  ) {
+      onReachEnd?.();
+    }
+  }}
+  
+  className="[&_.swiper-scrollbar]:-mb-1.5 
         [&_.swiper-scrollbar-drag]:!neutral 
          [&_.swiper-button-prev]:!text-primary 
          [&_.swiper-button-next]:!text-primary 

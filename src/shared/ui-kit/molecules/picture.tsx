@@ -19,6 +19,7 @@ interface Props {
   loading?: Loading;
   size: SizeImage;
   innerIcons?: [InnerIcons];
+  title?:string
   
 
   
@@ -30,7 +31,7 @@ const sizeMap: Record<SizeImage, string> = {
   lg: 'w-48 h-68',
 };
 
-export const Picture = ({ src, alt, loading = 'lazy', size, innerIcons }: Props) => {
+export const Picture = ({ src, alt, title,loading = 'lazy', size, innerIcons }: Props) => {
   const [error, setError] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -62,6 +63,7 @@ export const Picture = ({ src, alt, loading = 'lazy', size, innerIcons }: Props)
         onLoad={() => setLoaded(true)}
         onError={() => setError(true)}
       />
+      <div className='full absolute bottom-0 bg-accent' >    {title}</div>
     </div>
   );
 };
